@@ -1,9 +1,6 @@
 ---
-- name: converge
-  hosts: all
-  become: yes
-  gather_facts: yes
-
+- name: install postgres
+  hosts: db
   roles:
     - role: buluma.postgres
-      postgres_port: 6543
+      become: yes
